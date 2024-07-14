@@ -43,8 +43,12 @@ main#main #container-calculator {
 
 .tab button {
   flex: 1;
+  font-size: 50px;
 }
 
 .tab input {
   flex: 3.5 1 0;
+  max-width: 253.562px;
+  max-height: 84px;
+  font-size: 50px;
 }
