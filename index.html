@@ -8,16 +8,44 @@
   <script src="./script.js" defer></script>
 </head>
 <body>
-  <!-- Add header with title "Calculator" -->
   <header id="header">
     <h1 class="title">Calculator</h1>
   </header>
-  <!-- Add main with div container -->
   <main id="main">
     <div class="container" id="container-calculator">
+      <div class="tab" id="tab-input">
+        <input type="text" name="user-input" id="user-input">
+        <button id="clear-button">C</button>
+      </div>
+      <div class="tab" id="tab-first">
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button class="operator">/</button>
+      </div>
+      
+      <div class="tab" id="tab-second">
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button class="operator">*</button>
+      </div>
+      
+      <div class="tab" id="tab-third">
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button class="operator">-</button>
+      </div>
+      
+      <div class="tab" id="tab-fourth">
+        <button class="number">.</button>
+        <button class="number">0</button>
+        <button class="operator">+</button>
+        <button class="operator">=</button>
+      </div>
     </div>
   </main>
-  <!-- Add footer with text crediting the author of the code -->
   <footer id="footer">
     <p>Made by TEKKSUNN</p>
   </footer>
