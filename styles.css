@@ -17,3 +17,8 @@ footer#footer {
   justify-content: center;
   align-items: center;
 }
+
+header#header {
+  background-color: rgb(0, 0, 59);
+  color: whitesmoke;
+}
