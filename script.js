@@ -66,7 +66,7 @@ function updateUserInput(element) {
           return;
         }
         clearUserInput();
-        const numbers = currentValue.match(/\d+(\.+\d+)+/g);
+        const numbers = currentValue.match(/\d+(\.\d+)*/g);
         for (let i = 0; i < numbers.length; i++)
         {
           let dots = numbers[i].match(/\./g);
