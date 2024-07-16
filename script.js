@@ -84,7 +84,7 @@ function updateUserInput(element) {
         let operators = currentValue.match(/[+-/*](?!\.)/g);
         operators = operators.filter((operator) => ["+", "-", "/", "*"].includes(operator));
         const result = numbers.reduce((total, currentNumber, currentIndex) => {
-          currentNumber = parseInt(currentNumber);
+          currentNumber = parseFloat(currentNumber);
           if (currentIndex === 0)
           {
             return total += currentNumber;
