@@ -81,7 +81,8 @@ function updateUserInput(element) {
             return;
           }
         }
-        const operators = currentValue.match(/[+-/*]/g);
+        let operators = currentValue.match(/[+-/*](?!\.)/g);
+        operators = operators.filter((operator) => ["+", "-", "/", "*"].includes(operator));
         const result = numbers.reduce((total, currentNumber, currentIndex) => {
           currentNumber = parseInt(currentNumber);
           if (currentIndex === 0)
