@@ -13,11 +13,13 @@ const arrayOperatorButtons = Array.from(operatorButtons);
 const arrayFormatButtons = Array.from(formatButtons);
 const DARKEN_NUMBER = 100;
 let buttonClicked = false;
+const userInput = document.querySelector('#user-input');
 
 ARRAY_BUTTONS.forEach((button) => {
   button.addEventListener('mousedown', darkenBackground);
   button.addEventListener('mouseup', lightenBackground);
   button.addEventListener('mouseleave', lightenBackground);
+  button.addEventListener('click', updateUserInput);
 });
 
 function darkenBackground(event) {
@@ -43,4 +45,26 @@ function lightenBackground(event) {
     target.style.backgroundColor = `rgb(${rgbColors[0]}, ${rgbColors[1]}, ${rgbColors[2]})`;
     buttonClicked = false;
   }
+}
+
+function updateUserInput(element) {
+  target = element.target;
+  currentValue = userInput.value;
+  switch(target.textContent) {
+    case 'C':
+      clearUserInput();
+      return;
+    case '=':
+      clearUserInput();
+      return;
+  }
+  userInput.value = currentValue + target.textContent;
+}
+
+function clearUserInput() {
+  userInput.value = '';
+}
+
+function refocus() {
+  userInput.focus();
 }
