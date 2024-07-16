@@ -67,7 +67,7 @@ function updateUserInput(element) {
         }
         clearUserInput();
         const numbers = currentValue.match(/\d+(\.\d+)*/g);
-        if (numbers.length < 2)
+        if (numbers.length == null || numbers.length < 2)
         {
           userInput.value = currentValue;
           return;
@@ -82,6 +82,25 @@ function updateUserInput(element) {
           }
         }
         const operators = currentValue.match(/[+-/*]/g);
+        const result = numbers.reduce((total, currentNumber, currentIndex) => {
+          currentNumber = parseInt(currentNumber);
+          if (currentIndex === 0)
+          {
+            return total += currentNumber;
+          }
+          switch (operators[currentIndex - 1])
+          {
+            case '+':
+              return total += currentNumber;
+            case '-':
+              return total -= currentNumber;
+            case '*':
+              return total *= currentNumber;
+            case '/':
+              return total /= currentNumber;
+          }
+        }, 0);
+        userInput.value = result;
         return;
     }
   }
