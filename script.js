@@ -11,3 +11,29 @@ const ARRAY_BUTTONS = Array.from(BUTTONS);
 const arrayNumberButtons = Array.from(numberButtons);
 const arrayOperatorButtons = Array.from(operatorButtons);
 const arrayFormatButtons = Array.from(formatButtons);
+const DARKEN_NUMBER = 100;
+
+function darkenBackground(event) {
+  target = event.target;
+  rgbColors = ((window.getComputedStyle(target)).backgroundColor).match(/\d+/g);
+  for (let i = 0; i < rgbColors.length; i++)
+  {
+    rgbColors[i] = +rgbColors[i] - DARKEN_NUMBER;
+  }
+  target.style.backgroundColor = `rgb(${rgbColors[0]}, ${rgbColors[1]}, ${rgbColors[2]})`;
+}
+
+function lightenBackground(event) {
+  target = event.target;
+  rgbColors = ((window.getComputedStyle(target)).backgroundColor).match(/\d+/g);
+  for (let i = 0; i < rgbColors.length; i++)
+  {
+    rgbColors[i] = +rgbColors[i] + DARKEN_NUMBER;
+  }
+  target.style.backgroundColor = `rgb(${rgbColors[0]}, ${rgbColors[1]}, ${rgbColors[2]})`;
+}
+
+ARRAY_BUTTONS.forEach((element) => {
+  element.addEventListener('mousedown', darkenBackground);
+  element.addEventListener('mouseup', lightenBackground);
+});
