@@ -61,12 +61,21 @@ function updateUserInput(element) {
         return;
       case '=':
         if (operatorTextContent.includes(lastCharacter)
-        || currentValue.match(/[a-zA-Z]/g) !== null
-        || (currentValue.match(/\./g)).length > 1) {
+        || currentValue.match(/[a-zA-Z]/g) !== null) {
           showError();
           return;
         }
         clearUserInput();
+        const numbers = currentValue.match(/\d+(\.+\d+)+/g);
+        for (let i = 0; i < numbers.length; i++)
+        {
+          let dots = numbers[i].match(/\./g);
+          if (dots !== null && dots.length > 1)
+          {
+            showError();
+            return;
+          }
+        }
         return;
     }
   }
