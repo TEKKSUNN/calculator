@@ -60,7 +60,7 @@ function updateUserInput(element) {
         return;
       case '=':
         if (operatorTextContent.includes(lastCharacter)
-        || currentValue.match(/[a-zA-Z]/g) != null) {
+        || currentValue.match(/[a-zA-Z]/g) !== null) {
           showError();
           return;
         }
