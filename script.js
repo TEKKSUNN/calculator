@@ -14,6 +14,7 @@ const arrayFormatButtons = Array.from(formatButtons);
 const DARKEN_NUMBER = 100;
 let buttonClicked = false;
 const userInput = document.querySelector('#user-input');
+const operatorTextContent = arrayOperatorButtons.map((button) => button.textContent);
 
 ARRAY_BUTTONS.forEach((button) => {
   button.addEventListener('mousedown', darkenBackground);
@@ -50,13 +51,17 @@ function lightenBackground(event) {
 function updateUserInput(element) {
   target = element.target;
   currentValue = userInput.value;
-  switch(target.textContent) {
-    case 'C':
-      clearUserInput();
+  if (arrayFormatButtons.includes(target))
+  {
+    clearUserInput();
+    return;
+  }
+  if (arrayOperatorButtons.includes(target))
+  {
+    if (operatorTextContent.includes(currentValue[currentValue.length - 1]))
+    {
       return;
-    case '=':
-      clearUserInput();
-      return;
+    }
   }
   userInput.value = currentValue + target.textContent;
 }
