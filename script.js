@@ -81,6 +81,7 @@ function updateUserInput(element) {
             return;
           }
         }
+        const operators = currentValue.match(/[+-/*]/g);
         return;
     }
   }
