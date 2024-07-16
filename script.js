@@ -14,10 +14,10 @@ const arrayFormatButtons = Array.from(formatButtons);
 const DARKEN_NUMBER = 100;
 let buttonClicked = false;
 
-ARRAY_BUTTONS.forEach((element) => {
-  element.addEventListener('mousedown', darkenBackground);
-  element.addEventListener('mouseup', lightenBackground);
-  element.addEventListener('mouseleave', lightenBackground);
+ARRAY_BUTTONS.forEach((button) => {
+  button.addEventListener('mousedown', darkenBackground);
+  button.addEventListener('mouseup', lightenBackground);
+  button.addEventListener('mouseleave', lightenBackground);
 });
 
 function darkenBackground(event) {
