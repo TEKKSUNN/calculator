@@ -57,6 +57,7 @@ function updateUserInput(element) {
     switch (target.textContent) {
       case 'C':
         clearUserInput();
+        userInput.style.color = '#000000';
         return;
       case '=':
         if (operatorTextContent.includes(lastCharacter)
@@ -92,4 +93,5 @@ function refocus() {
 
 function showError() {
   userInput.value = 'ERROR';
+  userInput.style.color = '#FF0000';
 }
