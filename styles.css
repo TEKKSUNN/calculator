@@ -27,8 +27,8 @@ footer#footer {
 }
 
 main#main #container-calculator {
-  min-width: 350px;
-  min-height: 450px;
+  min-width: 300px;
+  min-height: 400px;
   border: 5px solid black;
   border-radius: 10px;
   display: flex;
@@ -48,7 +48,7 @@ main#main #container-calculator {
 
 .tab input {
   flex: 3.5 1 0;
-  max-width: 253.562px;
+  max-width: 216.562px;
   max-height: 84px;
   font-size: 50px;
   background-color: #f5f5f5;
