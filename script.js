@@ -75,6 +75,10 @@ function updateUserInput(element) {
       return;
     }
   }
+  if (currentValue === 'ERROR')
+  {
+    return;
+  }
   userInput.value = currentValue + target.textContent;
 }
 
