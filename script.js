@@ -102,6 +102,7 @@ function updateUserInput(element) {
           }
         }, 0);
         userInput.value = result;
+        refocus();
         return;
     }
   }
@@ -117,6 +118,7 @@ function updateUserInput(element) {
     return;
   }
   userInput.value = currentValue + target.textContent;
+  refocus();
 }
 
 function clearUserInput() {
