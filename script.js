@@ -6,7 +6,7 @@ const divide = (a, b) => a / b;
 const BUTTONS = document.querySelectorAll('button');
 const numberButtons = document.querySelectorAll('button.number');
 const operatorButtons = document.querySelectorAll('button.operator');
-const formatButtons = document.querySelectorAll('button.operator.format');
+const formatButtons = document.querySelectorAll('button.format');
 const ARRAY_BUTTONS = Array.from(BUTTONS);
 const arrayNumberButtons = Array.from(numberButtons);
 const arrayOperatorButtons = Array.from(operatorButtons);
