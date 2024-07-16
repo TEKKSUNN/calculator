@@ -51,10 +51,21 @@ function lightenBackground(event) {
 function updateUserInput(element) {
   target = element.target;
   currentValue = userInput.value;
+  lastCharacter = currentValue[currentValue.length - 1];
   if (arrayFormatButtons.includes(target))
   {
-    clearUserInput();
-    return;
+    switch (target.textContent) {
+      case 'C':
+        clearUserInput();
+        return;
+      case '=':
+        if (operatorTextContent.includes(lastCharacter)) {
+          showError();
+          return;
+        }
+        clearUserInput();
+        return;
+    }
   }
   if (arrayOperatorButtons.includes(target))
   {
@@ -72,4 +83,8 @@ function clearUserInput() {
 
 function refocus() {
   userInput.focus();
+}
+
+function showError() {
+  userInput.value = 'ERROR';
 }
